@@ -1,7 +1,6 @@
 'use client'
 import ThemeText from '@/components/ThemeText';
-import React, { useState } from 'react';
-import { FiPlus, FiMinus } from 'react-icons/fi';
+import { FiPlus} from 'react-icons/fi';
 
 const Faqs = () => {
 

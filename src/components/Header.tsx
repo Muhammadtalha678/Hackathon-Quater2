@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import NavbarLogo from '../../public/NavbarLogo.png'
 import Cart from '../../public/cart.png'
@@ -8,9 +7,7 @@ import ThemeText from './ThemeText'
 import { dm_sans } from '@/utils/fonts'
 import TopHeader from './TopHeader'
 import NavLinkHeader from './NavLinkHeader'
-import {useRouter} from 'next/router'
 const Header = () => {
-  // const router = useRouter()
   return (
     <div>
       {/* header 1 */}
