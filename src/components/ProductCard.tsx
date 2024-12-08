@@ -1,29 +1,37 @@
+'use client'
 import Image from 'next/image';
 import React from 'react';
 import ThemeText from './ThemeText';
 import Button from './Button';
 import { FiShoppingCart } from 'react-icons/fi';
+import { useRouter } from 'next/navigation';
 
 const ProductCard = ({
   productCounts,
   InfoSection,
   badge,
   sales,
-  imagePath
+  imagePath,
+  id
 }: {
   productCounts: boolean;
   InfoSection: boolean;
   badge: boolean;
   sales?: boolean;
-  imagePath:string
-}) => {
+    imagePath: string,
+  id:number
+  }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/products/${id}`); // Navigate to dynamic product page
+  };
   return (
     <div className="flex items-center justify-center w-full">
       <div className="relative flex flex-col w-full h-auto rounded-lg overflow-hidden bg-white">
         {/* Badge Section */}
 
         {/* Image Section */}
-        <div className="relative w-full h-[350px] ">
+        <div className="relative w-full h-[350px] cursor-pointer" onClick={handleClick} >
           <Image
             src={imagePath}
             alt="Featured Product"

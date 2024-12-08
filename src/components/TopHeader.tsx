@@ -3,6 +3,7 @@ import ThemeText from './ThemeText'
 import { FaCheck } from "react-icons/fa6";
 import { FaChevronDown } from "react-icons/fa";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
+import Link from 'next/link';
 
 const TopHeader = ({sideOneText,sideTwoText,bg,textColor}:{sideOneText?:string,sideTwoText?:React.ReactNode,bg?:string,textColor?:string}) => {
   return (
@@ -19,7 +20,9 @@ const TopHeader = ({sideOneText,sideTwoText,bg,textColor}:{sideOneText?:string,s
                 <FaChevronDown color='#FFFFFF' size={8}/>      
             </div>
             <div className='flex items-center'>
-                <ThemeText fontWeight='font-normal' className='text-[8px] mxs:text-[10px] xs:text-[13px] leading-4 text-[#FFFFFF]'>Faqs</ThemeText>
+                  <ThemeText  fontWeight='font-normal' className='text-[8px] mxs:text-[10px] xs:text-[13px] leading-4 text-[#FFFFFF]'>
+                      <Link href={'/faqs'} >Faqs</Link>
+                </ThemeText>
             </div>
             <div className='flex gap-1  items-center'>
                 <AiOutlineExclamationCircle  color='white' className='text-[8px] mxs:text-[10px] xs:text-[13px]'/>     
