@@ -21,20 +21,6 @@ const ProductCard = ({
     <div className="flex items-center justify-center w-full">
       <div className="relative flex flex-col w-full h-auto rounded-lg overflow-hidden bg-white">
         {/* Badge Section */}
-        {badge && (
-          <div className="absolute top-0 flex justify-between w-full p-2 ">
-            <Button
-              width={'w-14'}
-              height={'h-7'}
-              borderRad={'rounded'}
-              bg={sales ? 'bg-[#F5813F]' : ''}
-            >
-              <ThemeText fontWeight="font-normal" className="text-[12px] leading-3 text-white">
-                {sales ? 'Sales' : 'New'}
-              </ThemeText>
-            </Button>
-          </div>
-        )}
 
         {/* Image Section */}
         <div className="relative w-full h-[350px] ">
@@ -55,6 +41,20 @@ const ProductCard = ({
               </div>
             </div>
           )}
+          {badge && (
+          <div className="absolute top-0 flex justify-between w-full p-2 ">
+            <Button
+              width={'w-14'}
+              height={'h-7'}
+              borderRad={'rounded'}
+              bg={sales ? 'bg-[#F5813F]' : ''}
+            >
+              <ThemeText fontWeight="font-normal" className="text-[12px] leading-3 text-white">
+                {sales ? 'Sales' : 'New'}
+              </ThemeText>
+            </Button>
+          </div>
+        )}
         </div>
 
         {/* Info Section */}
