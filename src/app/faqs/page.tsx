@@ -1,4 +1,3 @@
-
 import ThemeText from '@/components/ThemeText';
 import { Metadata } from 'next';
 import { FiPlus} from 'react-icons/fi';
@@ -39,7 +38,6 @@ const Faqs = () => {
             {/* Ques */}
             <div
               className="flex justify-between items-center cursor-pointer"
-              onClick={() => {}}
             >
               <h3 className="text-lg font-semibold text-gray-800">
                 {faq.question}
