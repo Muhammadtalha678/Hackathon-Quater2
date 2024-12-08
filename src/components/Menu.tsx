@@ -5,7 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import NavLink from './NavLink';
 
 const Menu = ({size}:{size:number}) => {
-    let [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false)
     const handleHamburger = () =>  {
         setOpen(!open)
     }
