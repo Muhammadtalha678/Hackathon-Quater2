@@ -11,13 +11,28 @@ import Company4 from '../../public/company4.png'
 import Company5 from '../../public/company5.png'
 import Company6 from '../../public/company6.png'
 import Company7 from '../../public/company7.png'
+import SectionHeading from "@/components/SectionHeading";
+import ProductCard from "@/components/ProductCard";
+
+import Prod2 from '../../public/product2.png';
+import Prod3 from '../../public/product3.png';
+import Prod4 from '../../public/product4.png';
+import Prod15 from '../../public/product5.png';
+import Prod6 from '../../public/product6.png';
+import Prod7 from '../../public/product7.png';
+import Prod8 from '../../public/product8.png';
+
+
+import Cat1 from '../../public/category1.png';
+import Cat2 from '../../public/category2.png';
+import Cat3 from '../../public/category3.png';
 
 
 export default function Home() {
   return (
-    <div className="px-4 md:px-8 lg:px-12 xl:px-36 ">
+    <div className=" md:px-12 lg:px-16 xl:px-32 ">
       {/* hero section */}
-      <section>
+      <section className="">
         <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-0 gap-12 bg-[#F0F2F3]   px-8 py-12 ">
         <div className="flex flex-col gap-4 sm:justify-center">
           <div className="flex flex-col gap-3 ">
@@ -43,8 +58,8 @@ export default function Home() {
       </section>
 
       {/* companies section */}
-      <section className="mt-5">
-        <div className="grid gap-4 grid-cols-7  w-full">
+      <section className=" px-8">
+        <div className="grid gap-4 grid-cols-7 w-full">
           <div className="cols-span-1  flex items-center justify-center">
             <Image src={Company1} alt="company 1"/>
           </div>
@@ -69,6 +84,55 @@ export default function Home() {
         </div>
       </section>
       
+      {/* Featured Product Section */}
+      <section className="mt-32 px-8">
+        <SectionHeading heading="Featured Products" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 ">
+            <ProductCard sales={true} badge={true} InfoSection={true} productCounts={false} imagePath={`${Prod15.src}`} />
+            <ProductCard sales={false} badge={true} InfoSection={true} productCounts={false} imagePath={`${Prod2.src}`}/>
+            <ProductCard badge={false} InfoSection={true} productCounts={false} imagePath={`${Prod3.src}`}/>
+            <ProductCard badge={false} InfoSection={true} productCounts={false} imagePath={`${Prod4.src}`}/>
+        </div>
+      </section>
+      {/* Top Categories  */}
+      <section className="mt-32 px-8">
+        <SectionHeading heading="Top categories" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-10 mt-12 ">
+            <ProductCard badge={false} InfoSection={false} productCounts={true} imagePath={`${Cat2.src}`}/>
+            <ProductCard badge={false} InfoSection={false} productCounts={true} imagePath={`${Cat3.src}`}/>
+            <ProductCard badge={false}  InfoSection={false} productCounts={true} imagePath={`${Cat1.src}`}/>
+        </div>
+      </section>
+
+      {/* explore styles */}
+      {/* <section className="mt-5 mb-50">
+        <div className="flex flex-col  md:flex-row h-[400px] md:h-[500px] lg:h-[648px] gap-3">
+          <div className="w-full flex justify-center items-center">
+            <Image src={Style1} alt="Product" className="w-[100%] h-[100%] object-cover"/>
+          </div>
+          <div className=" w-full h-full bg-slate-300">
+            <Image src={Style1} alt="Product" className="w-[100%] h-[100%] object-cover"/>
+
+          </div>
+        </div>
+      </section> */}
+
+      {/* products */}
+      <section className="mt-32 px-8">
+        <div className="flex items-center justify-center">
+          <SectionHeading heading="Products" />
+        </div>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
+          <ProductCard sales={true} badge={true} InfoSection={true} productCounts={false} imagePath={Prod15.src} />
+            <ProductCard sales={false} badge={true} InfoSection={true} productCounts={false} imagePath={Prod2.src} />
+            <ProductCard badge={false} InfoSection={true} productCounts={false} imagePath={Prod3.src} />
+            <ProductCard badge={false} InfoSection={true} productCounts={false} imagePath={Prod4.src} />
+            <ProductCard sales={true} badge={true}  InfoSection={true} productCounts={false} imagePath={Prod15.src} />
+            <ProductCard sales={false} badge={true} InfoSection={true} productCounts={false} imagePath={Prod6.src} />
+            <ProductCard badge={false} InfoSection={true} productCounts={false} imagePath={Prod7.src} />
+            <ProductCard badge={false} InfoSection={true} productCounts={false} imagePath={Prod8.src} />
+        </div>
+      </section>
     </div>
   );
 }
