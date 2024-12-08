@@ -1,4 +1,4 @@
-'use client'
+
 import ThemeText from '@/components/ThemeText';
 import { Metadata } from 'next';
 import { FiPlus} from 'react-icons/fi';
