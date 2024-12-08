@@ -7,7 +7,11 @@ import Prod7 from '../../../../public/product7.png';
 import { products } from "@/utils/products";
 import Image from "next/image";
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
+export default async function ProductDetail({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
   const images = [
     {image:Prod2},
     {image:Prod3},
@@ -15,7 +19,8 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     {image:Prod6},
     {image:Prod7},
   ]
-  const { id } = params;
+  const id = (await params).id
+  // const { id } = params;
   const product = products.find((item) => item.id === Number(id));
 
   if (!product) {
