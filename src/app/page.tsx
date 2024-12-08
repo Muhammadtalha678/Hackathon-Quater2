@@ -26,6 +26,7 @@ import Prod8 from '../../public/product8.png';
 import Cat1 from '../../public/category1.png';
 import Cat2 from '../../public/category2.png';
 import Cat3 from '../../public/category3.png';
+import HotProduct from "@/components/HotProduct";
 
 
 export default function Home() {
@@ -105,17 +106,10 @@ export default function Home() {
       </section>
 
       {/* explore styles */}
-      {/* <section className="mt-5 mb-50">
-        <div className="flex flex-col  md:flex-row h-[400px] md:h-[500px] lg:h-[648px] gap-3">
-          <div className="w-full flex justify-center items-center">
-            <Image src={Style1} alt="Product" className="w-[100%] h-[100%] object-cover"/>
-          </div>
-          <div className=" w-full h-full bg-slate-300">
-            <Image src={Style1} alt="Product" className="w-[100%] h-[100%] object-cover"/>
-
-          </div>
-        </div>
-      </section> */}
+      <section className="mt-32 px-8">
+        <HotProduct/>
+      </section>
+       
 
       {/* products */}
       <section className="mt-32 px-8">
