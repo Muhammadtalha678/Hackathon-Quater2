@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import NavbarLogo from '../../public/NavbarLogo.png'
 import Cart from '../../public/cart.png'
@@ -7,7 +8,9 @@ import ThemeText from './ThemeText'
 import { dm_sans } from '@/utils/fonts'
 import TopHeader from './TopHeader'
 import NavLinkHeader from './NavLinkHeader'
+import {useRouter} from 'next/router'
 const Header = () => {
+  // const router = useRouter()
   return (
     <div>
       {/* header 1 */}
@@ -18,14 +21,16 @@ const Header = () => {
           <Link href={'/'}>
               <Image src={NavbarLogo} alt='Navbar logo'/>
           </Link>
-          <div className='bg-[#FFFFFF] w-[120px] h-[144ps] rounded-lg flex items-center px-2'>
-            <div className='flex items-center gap-4 '>
+            <div className='bg-[#FFFFFF] w-[120px] h-[144ps] rounded-lg flex items-center px-2 cursor-pointer'>
+          <Link href={'/cart'}>
+            <div className='flex items-center gap-4 ' >
                 <Image src={Cart} alt='cart' width={22} height={22}/>
                 <ThemeText  fontWeight='font-medium' className='text-[12px] leading-3'>Cart</ThemeText>
                 <div className={`flex items-center justify-center w-5 h-5 bg-[#007580] rounded-2xl `}>
                 <p className={`${dm_sans.className} text-[10px] text-[#fff] leading-[10px]`}>2</p>
                 </div>
             </div>
+          </Link>
           </div>
           </div>
       </div>
