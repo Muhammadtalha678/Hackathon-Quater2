@@ -6,7 +6,7 @@ import ThemeText from './ThemeText'
 interface LinksProps{
     name: string,
   path: string,
-  onclick:() => void
+  onclick?:() => void
 }
 const NavLink = (props:LinksProps) => {
   return (

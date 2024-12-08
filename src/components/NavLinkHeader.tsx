@@ -9,7 +9,7 @@ const NavLinkHeader = () => {
     <div className='h-[74px] border-b-2 bg-[#FFFFFF] w-full px-4 md:px-8 lg:px-12 xl:px-36 flex items-center justify-between'>
       <div className="hidden sm:flex gap-8">
         {navLinks.map((e,i) => {
-            return <NavLink name={e.name} path={e.path} key={i+1}/>
+            return <NavLink name={e.name} path={e.path} key={i+1} />
         })}
       </div>
       <div className="flex sm:hidden gap-8">
