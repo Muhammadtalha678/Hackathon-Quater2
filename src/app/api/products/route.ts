@@ -4,7 +4,8 @@ import { NextResponse } from "next/server";
 export async function GET() {
     try {
         const response = await client.fetch(`*[_type == "products"]`)
-        if (!response.ok) {
+        //if no response come
+        if (!response) {
             throw new Error("Error Fetching Products");
         }
         return NextResponse.json({
