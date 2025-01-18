@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 
 
-const ProductCard = ({productCounts,InfoSection,badge,sales,imagePath,id,title,price,pricewithoutDiscount}:ProdcutCardInterface) => {
+const ProductCard = ({productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount}:ProdcutCardInterface) => {
 
   return (
     <div className="flex items-center justify-center w-full">

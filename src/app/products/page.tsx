@@ -1,15 +1,3 @@
-import ProductCard from '@/components/ProductCard'
-import SectionHeading from '@/components/SectionHeading'
-import Image from 'next/image'
-import React from 'react'
-import Prod2 from '../../../public/product2.png';
-import Prod3 from '../../../public/product3.png';
-import Prod15 from '../../../public/product5.png';
-import Prod6 from '../../../public/product6.png';
-import Prod7 from '../../../public/product7.png';
-import Prod8 from '../../../public/product8.png';
-import { roboto } from '@/utils/fonts';
-import { products } from '@/utils/products';
 import { Metadata } from 'next';
 import ProductsList from '@/components/Products/ProductsList';
 
