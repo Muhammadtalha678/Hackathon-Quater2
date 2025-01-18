@@ -4,39 +4,27 @@ import React from 'react';
 import ThemeText from './ThemeText';
 import Button from './Button';
 import { FiShoppingCart } from 'react-icons/fi';
-import { useRouter } from 'next/navigation';
+import { ProdcutCardInterface } from '@/interfaces/ProductCard';
+import Link from 'next/link';
 
-const ProductCard = ({
-  productCounts,
-  InfoSection,
-  badge,
-  sales,
-  imagePath,
-  id
-}: {
-  productCounts: boolean;
-  InfoSection: boolean;
-  badge: boolean;
-  sales?: boolean;
-    imagePath: string,
-  id:number
-  }) => {
-  const router = useRouter();
-  const handleClick = () => {
-    router.push(`/products/${id}`); // Navigate to dynamic product page
-  };
+
+
+const ProductCard = ({productCounts,InfoSection,badge,sales,imagePath,id,title,price,pricewithoutDiscount}:ProdcutCardInterface) => {
+
   return (
     <div className="flex items-center justify-center w-full">
       <div className="relative flex flex-col w-full h-auto rounded-lg overflow-hidden bg-white">
         {/* Badge Section */}
 
         {/* Image Section */}
-        <div className="relative w-full h-[350px] cursor-pointer" onClick={handleClick} >
-          <Image
-            src={imagePath}
-            alt="Featured Product"
-            className="w-full h-full object-cover rounded-lg" fill
-          />
+        <div className="relative w-full h-[350px] cursor-pointer" >
+          <Link href={`/products/${id}`}>
+            <Image
+              src={imagePath}
+              alt="Featured Product"
+              className="w-full h-full object-cover rounded-lg" fill
+            />
+          </Link>
           {productCounts && (
             <div className="flex items-center px-7 absolute bottom-0 w-full bg-opacity-60 bg-black h-[70px] rounded-b-lg">
               <div className="flex flex-col gap-1">
@@ -55,10 +43,10 @@ const ProductCard = ({
               width={'w-14'}
               height={'h-7'}
               borderRad={'rounded'}
-              bg={sales ? 'bg-[#F5813F]' : ''}
+              bg={badge === 'Sales' ? 'bg-[#F5813F]' : ''}
             >
               <ThemeText fontWeight="font-normal" className="text-[12px] leading-3 text-white">
-                {sales ? 'Sales' : 'New'}
+                {badge}
               </ThemeText>
             </Button>
           </div>
@@ -74,21 +62,21 @@ const ProductCard = ({
                   fontWeight="font-normal"
                   className="text-[#007580] text-[16px] leading-[20px]"
                 >
-                  Library Stool Chair
+                  {title}
                 </ThemeText>
                 <div className="flex gap-2 items-center">
                   <ThemeText
                     fontWeight="font-normal"
                     className="text-[#272343] text-[18px] leading-[19px]"
                   >
-                    $20
+                    {`$${price}`}
                   </ThemeText>
-                  {sales && (
+                  {pricewithoutDiscount && (
                     <ThemeText
                       fontWeight="font-normal"
                       className="line-through text-[#9A9CAA] text-[14px] leading-[15px]"
                     >
-                      $30
+                      {`$${pricewithoutDiscount}`}
                     </ThemeText>
                   )}
                 </div>
