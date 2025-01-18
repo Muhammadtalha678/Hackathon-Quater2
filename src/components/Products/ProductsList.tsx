@@ -29,7 +29,7 @@ const ProductsList = ({ products }:{ products: Product[] }) => {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
                 {products.map((prod, i) => {
               const imageUrl = urlFor(prod.image.asset._ref).url()
-                  return <ProductCard key={i} imagePath={imageUrl} badge={prod.badge!} sales={prod.badge!}
+                  return <ProductCard key={i} imagePath={imageUrl} badge={prod.badge!}
                     InfoSection={true} title={prod.title} pricewithoutDiscount={prod.priceWithoutDiscount!}
                   price={prod.price!} id={prod._id}/>
             })
