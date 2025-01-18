@@ -19,7 +19,9 @@ export const metadata: Metadata = {
 };
 const Products = async() => {
   try {
-    const response = await fetch('https://hackathon-quater2.vercel.app/api/products')
+    const response = await fetch('https://hackathon-quater2.vercel.app/api/products', {
+      cache:'no-cache'
+    })
     if (!response.ok) {
       throw new Error("Error Fetching Products");
     }
