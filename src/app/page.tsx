@@ -14,18 +14,18 @@ import Company7 from '../../public/company7.png'
 import SectionHeading from "@/components/SectionHeading";
 // import ProductCard from "@/components/ProductCard";
 
-import Prod2 from '../../public/product2.png';
-import Prod3 from '../../public/product3.png';
-import Prod4 from '../../public/product4.png';
-import Prod15 from '../../public/product5.png';
-import Prod6 from '../../public/product6.png';
-import Prod7 from '../../public/product7.png';
-import Prod8 from '../../public/product8.png';
+// import Prod2 from '../../public/product2.png';
+// import Prod3 from '../../public/product3.png';
+// import Prod4 from '../../public/product4.png';
+// import Prod15 from '../../public/product5.png';
+// import Prod6 from '../../public/product6.png';
+// import Prod7 from '../../public/product7.png';
+// import Prod8 from '../../public/product8.png';
 
 
-import Cat1 from '../../public/category1.png';
-import Cat2 from '../../public/category2.png';
-import Cat3 from '../../public/category3.png';
+// import Cat1 from '../../public/category1.png';
+// import Cat2 from '../../public/category2.png';
+// import Cat3 from '../../public/category3.png';
 import HotProduct from "@/components/HotProduct";
 
 
