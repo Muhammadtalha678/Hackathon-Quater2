@@ -29,8 +29,7 @@ export default async function ProductDetail({
     {image:Prod7},
   ]
   const id = (await params).id
-  const product = products.find((item) => item.id === Number(id));
-
+  
   try {
     const response = await fetch(`/api/products/${id}`)
     if (!response.ok) {
