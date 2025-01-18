@@ -32,14 +32,14 @@ export default async function ProductDetail({
   const product = products.find((item) => item.id === Number(id));
 
   try {
-    const response = await fetch(`http://localhost:3000/api/products/${id}`)
+    const response = await fetch(`/api/products/${id}`)
     if (!response.ok) {
       throw new Error("Error Fecthing Product");
     }
     const data:Product = await response.json()
     console.log("response",response);
     
-    const imageUrl = urlFor(data.image.asset._ref).url()
+    const imageUrl = urlFor(data?.image?.asset?._ref).url()
     return (
        <div className="flex flex-col items-center p-6 min-h-screen">
         {/* Main Section */}
