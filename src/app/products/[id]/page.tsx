@@ -5,7 +5,6 @@ import Prod3 from '../../../../public/product3.png';
 import Prod15 from '../../../../public/product5.png';
 import Prod6 from '../../../../public/product6.png';
 import Prod7 from '../../../../public/product7.png';
-import { products } from "@/utils/products";
 import Image from "next/image";
 import { Product } from '@/interfaces/Product';
 import { urlFor } from '@/sanity/lib/image';
