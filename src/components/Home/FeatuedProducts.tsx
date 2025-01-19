@@ -11,7 +11,7 @@ const FeatuedProducts = ({featProd}:{featProd:Product[]}) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 ">
             {
                featProd.slice(0,4).map( (featProduct, i) => {
-                
+                  
                 const imageUrl = urlFor(featProduct.image.asset._ref).url()
                 return <ProductCard InfoSection={true} badge={featProduct.badge!} price={featProduct.price}
                   pricewithoutDiscount={featProduct.priceWithoutDiscount!} title={featProduct.title}
