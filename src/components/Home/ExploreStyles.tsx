@@ -46,7 +46,7 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
 
           {/* Other chairs (right side) */}
           {
-              gallery.map((g, i) => {
+              gallery.slice(0,3).map((g, i) => {
               const imageUrl = urlFor(g.image.asset._ref).url()
               return <div className="grid grid-cols-2 gap-4 w-full md:w-[60%] lg:w-[48%]" key={i}>
             <div className="aspect-square">
