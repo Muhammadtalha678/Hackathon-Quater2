@@ -1,4 +1,4 @@
-import { ALL_CATEGORIES_QUERY, ALL_PRODUCT_QUERY, FEATURED_PRODUCTS_QUERY } from "@/lib/services/sanity/quries";
+import { ALL_CATEGORIES_QUERY, ALL_PRODUCT_QUERY, FEATURED_PRODUCTS_QUERY } from "@/lib/quries";
 import { client } from "@/sanity/lib/client";
 import { NextResponse } from "next/server";
 

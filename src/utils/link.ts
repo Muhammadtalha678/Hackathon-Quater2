@@ -1,4 +1,6 @@
-export const navLinks = [
+import { NavLink } from "@/interfaces/NavLink";
+
+export const navLinks: NavLink[] = [
     { name: 'Home', path: '/' },
     { name: 'Shop', path: '/shop' },
     { name: 'Product', path: '/products' },

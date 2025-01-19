@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Product } from '@/interfaces/Product';
 import { urlFor } from '@/sanity/lib/image';
 import { client } from '@/sanity/lib/client';
+import Link from 'next/link';
 
 
 
@@ -65,33 +66,16 @@ export default async function ProductDetail({params,}: {params: Promise<{ id: st
             <h2 className="text-lg lg:text-2xl font-semibold text-gray-800">
               Featured Products
             </h2>
-            <a
+            <Link
               href="/products"
               className="text-teal-600 text-sm lg:text-base hover:underline"
             >
               View all
-            </a>
+            </Link>
           </div>
   
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-6">
             {/* Featured Product Cards */}
-            {/* {Array.from({ length: 5 }).map((_, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <Image
-                  src={`/chair${index + 1}.jpg`} // Replace with your product images
-                  alt={`Chair ${index + 1}`}
-                  width={140}
-                  height={140}
-                  className="rounded-md"
-                />
-                <p className="text-sm lg:text-base text-gray-800 mt-2">
-                  Library Stool Chair
-                </p>
-                <p className="text-sm lg:text-base text-gray-600 font-semibold">
-                  $99
-                </p>
-              </div>
-            ))} */}
             {
               
               featured.map((featProd, i) => {
