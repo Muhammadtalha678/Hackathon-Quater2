@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react'
 import SectionHeading from '../SectionHeading'
 import ProductCard from '../ProductCard'
 import { urlFor } from '@/sanity/lib/image'
-import Button from '../Button'
-import ThemeText from '../ThemeText'
 import ProductSkeleton from '../Skeleton/ProductSkeleton'
 
 const Products = ({ products }: { products: Product[] }) => {

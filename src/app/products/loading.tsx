@@ -1,8 +1,6 @@
 'use client'
 
 import React from 'react';
-import ThemeText from '@/components/ThemeText'; 
-import Button from '@/components/Button'; 
 import ProductSkeleton from '@/components/Skeleton/ProductSkeleton';
 
 export default function Loading() {
