@@ -5,6 +5,7 @@ import Image from "next/image";
 import Prod3 from '../../../public/product3.png';
 import Prod4 from '../../../public/product4.png';
 import GallerySkeleton from '../Skeleton/GallerySkeleton';
+import { urlFor } from '@/sanity/lib/image';
 
 const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
   console.log(galleryProd);
@@ -30,7 +31,7 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
 
         {/* Images section */}
         {
-          gallery ?
+          gallery.length > 0 ?
           <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Orange chair (left side) */}
           <div className="w-full md:w-[48%]">
@@ -45,10 +46,13 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
           </div>
 
           {/* Other chairs (right side) */}
-          <div className="grid grid-cols-2 gap-4 w-full md:w-[60%] lg:w-[48%]">
+          {
+              gallery.map((g, i) => {
+              const imageUrl = urlFor(g.image.asset._ref).url()
+              return <div className="grid grid-cols-2 gap-4 w-full md:w-[60%] lg:w-[48%]" key={i}>
             <div className="aspect-square">
               <Image
-                src={Prod4}
+                src={imageUrl}
                 alt="White tufted chair"
                 className="h-full w-full object-cover"
                 width={500}
@@ -57,6 +61,8 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
             </div>
             
           </div>
+            })
+          }
         </div>
         :<GallerySkeleton/>
         }
