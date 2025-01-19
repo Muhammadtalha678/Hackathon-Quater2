@@ -45,11 +45,12 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
           </div>
 
           {/* Other chairs (right side) */}
-          {
-              gallery.slice(0,3).map((g, i) => {
+          <div className="grid grid-cols-2 gap-4 w-full md:w-[60%] lg:w-[48%]">
+            {
+              
+              gallery.slice(0,4).map((g, i) => {
               const imageUrl = urlFor(g.image.asset._ref).url()
-              return <div className="grid grid-cols-2 gap-4 w-full md:w-[60%] lg:w-[48%]" key={i}>
-            <div className="aspect-square">
+              return <div className="aspect-square" key={i}>
               <Image
                 src={imageUrl}
                 alt="White tufted chair"
@@ -57,11 +58,12 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
                 width={500}
                 height={500}
               />
-            </div>
+              </div>
             
-          </div>
+          
             })
           }
+          </div>
         </div>
         :<GallerySkeleton/>
         }
