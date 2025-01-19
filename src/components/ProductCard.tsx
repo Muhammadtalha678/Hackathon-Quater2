@@ -1,4 +1,4 @@
-'use client'
+
 import Image from 'next/image';
 import React from 'react';
 import ThemeText from './ThemeText';
@@ -9,8 +9,9 @@ import Link from 'next/link';
 
 
 
-const ProductCard = ({productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount}:ProdcutCardInterface) => {
-
+const ProductCard = (
+  {productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount}:ProdcutCardInterface) => {
+    console.log("productCounts",productCounts);
   return (
     <div className="flex items-center justify-center w-full">
       <div className="relative flex flex-col w-full h-auto rounded-lg overflow-hidden bg-white">
@@ -25,14 +26,16 @@ const ProductCard = ({productCounts,InfoSection,badge,imagePath,id,title,price,p
               className="w-full h-full object-cover rounded-lg" fill
             />
           </Link>
-          {productCounts && (
+          {
+          
+            productCounts && (
             <div className="flex items-center px-7 absolute bottom-0 w-full bg-opacity-60 bg-black h-[70px] rounded-b-lg">
               <div className="flex flex-col gap-1">
                 <ThemeText fontWeight="font-medium" className="text-[20px] leading-[22px] text-white">
-                  Desk Chair
+                  {title}
                 </ThemeText>
                 <ThemeText fontWeight="font-normal" className="text-[14px] leading-[19px] text-white">
-                  154 Products
+                  {productCounts}
                 </ThemeText>
               </div>
             </div>

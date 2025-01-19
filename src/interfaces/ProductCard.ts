@@ -1,10 +1,10 @@
 export interface ProdcutCardInterface {
-    productCounts?: boolean,
-    InfoSection: boolean,
-    badge: string | null,
+    productCounts?: number,
+    InfoSection?: boolean,
+    badge?: string | null,
     imagePath: string,
     id?: string,
-    title: string,
-    price: number,
-    pricewithoutDiscount: number
+    title?: string,
+    price?: number,
+    pricewithoutDiscount?: number
 }
