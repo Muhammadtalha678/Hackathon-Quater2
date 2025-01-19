@@ -2,7 +2,7 @@ import { Product } from "@/interfaces/Product";
 import { Category } from "@/interfaces/Category";
 import HeroSection from "@/components/Home/HeroSection";
 import Companies from "@/components/Home/Companies";
-import FeatuedProducts from "@/components/Home/FeatuedPrroducts";
+import FeatuedProducts from "@/components/Home/FeatuedProducts";
 import CategoryProducts from "@/components/Home/CategoryProducts";
 import ExploreStyles from "@/components/Home/ExploreStyles";
 import Products from "@/components/Home/Products";
