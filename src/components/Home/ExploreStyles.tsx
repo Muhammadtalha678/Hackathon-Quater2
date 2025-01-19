@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Product } from '@/interfaces/Product'
 import Image from "next/image";
 import Prod3 from '../../../public/product3.png';
-import Prod4 from '../../../public/product4.png';
 import GallerySkeleton from '../Skeleton/GallerySkeleton';
 import { urlFor } from '@/sanity/lib/image';
 
