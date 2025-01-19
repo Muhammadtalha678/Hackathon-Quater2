@@ -1,23 +1,20 @@
-'use client'
+
 import { Product } from '@/interfaces/Product'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import SectionHeading from '../SectionHeading'
 import ProductCard from '../ProductCard'
 import { urlFor } from '@/sanity/lib/image'
 import ProductSkeleton from '../Skeleton/ProductSkeleton'
 
 const FeatuedProducts = ({featProd}:{featProd:Product[]}) => {
-  const [featuredProd, setFeaturedProd] = useState<Product[]>([])
-  useEffect(() => {
-    setFeaturedProd(featProd)
-  },[featProd])
+ 
   return (
     <section className="mt-32 px-8">
         <SectionHeading heading="Featured Products" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 ">
             {
-              featuredProd.length>0?
-               featuredProd.slice(0,4).map( (featProduct, i) => {
+              featProd.length>0?
+               featProd.slice(0,4).map( (featProduct, i) => {
                   
                 const imageUrl = urlFor(featProduct.image.asset._ref).url()
                 return <ProductCard InfoSection={true} badge={featProduct.badge!} price={featProduct.price}

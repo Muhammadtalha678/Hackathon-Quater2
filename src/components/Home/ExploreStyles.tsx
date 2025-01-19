@@ -1,5 +1,5 @@
-'use client'
-import React, { useEffect, useState } from 'react'
+
+import React from 'react'
 import { Product } from '@/interfaces/Product'
 import Image from "next/image";
 import Prod3 from '../../../public/product3.png';
@@ -7,10 +7,6 @@ import GallerySkeleton from '../Skeleton/GallerySkeleton';
 import { urlFor } from '@/sanity/lib/image';
 
 const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
-  console.log(galleryProd);
-  
-  const [gallery, setGallery] = useState<Product[]>([])
-  useEffect(()=>{setGallery(galleryProd)},[galleryProd])
   return (
     <section className="mt-32 px-8">
       {
@@ -30,7 +26,7 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
 
         {/* Images section */}
         {
-          gallery.length > 0 ?
+          galleryProd.length > 0 ?
           <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Orange chair (left side) */}
           <div className="w-full md:w-[48%]">
@@ -48,7 +44,7 @@ const ExploreStyles = ({ galleryProd }: { galleryProd: Product[] }) => {
           <div className="grid grid-cols-2 gap-4 w-full md:w-[60%] lg:w-[48%]">
             {
               
-              gallery.slice(0,4).map((g, i) => {
+              galleryProd.slice(0,4).map((g, i) => {
               const imageUrl = urlFor(g.image.asset._ref).url()
               return <div className="aspect-square" key={i}>
               <Image

@@ -13,10 +13,8 @@ export default async function Home() {
       throw new Error("Failed to fetch data");
     }
     const { data } = await response.json()
-    console.log(data);
     
     const { featuredProducts, categories, products, galleryProducts }: HomePage = data
-    console.log(galleryProducts);
     
        return (
     <div className=" md:px-12 lg:px-16 xl:px-32 ">
