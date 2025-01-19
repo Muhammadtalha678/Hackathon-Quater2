@@ -11,7 +11,6 @@ import Link from 'next/link';
 
 const ProductCard = (
   {productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount}:ProdcutCardInterface) => {
-    console.log("productCounts",productCounts);
   return (
     <div className="flex items-center justify-center w-full">
       <div className="relative flex flex-col w-full h-auto rounded-lg overflow-hidden bg-white">

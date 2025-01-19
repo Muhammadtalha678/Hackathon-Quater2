@@ -1,5 +1,6 @@
-import { urlFor } from '@/helpers/sanityImage.helper'
+
 import { Product } from '@/interfaces/Product'
+import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 const ProdcutsInstagram = ({filterInsta}:{filterInsta:Product[]}) => {
   

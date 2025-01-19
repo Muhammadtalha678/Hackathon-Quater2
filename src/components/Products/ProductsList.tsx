@@ -5,7 +5,7 @@ import SectionHeading from '../SectionHeading'
 import ProductCard from '../ProductCard'
 import { roboto } from '@/utils/fonts'
 import ProdcutsInstagram from './ProdcutsInstagram'
-import { urlFor } from '@/helpers/sanityImage.helper'
+import { urlFor } from '@/sanity/lib/image'
 // jest+chae.js+mocka.js
 const ProductsList = ({ products }:{ products: Product[] }) => {
     const [filterInstagram,setFilterInstagram] = useState<Product[]>([]) 
