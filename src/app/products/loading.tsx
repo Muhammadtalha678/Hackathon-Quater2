@@ -1,10 +1,8 @@
 'use client'
 
 import React from 'react';
-import { FiShoppingCart } from 'react-icons/fi';
-import Link from 'next/link';
-import ThemeText from '@/components/ThemeText'; // Assuming you have this component
-import Button from '@/components/Button'; // Assuming you have this component
+import ThemeText from '@/components/ThemeText'; 
+import Button from '@/components/Button'; 
 
 export default function Loading() {
   return (
