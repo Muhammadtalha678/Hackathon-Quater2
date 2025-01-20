@@ -1,6 +1,6 @@
 'use client'
 import { Product } from '@/interfaces/Product'
-import React, { useContext } from 'react'
+import React from 'react'
 import SectionHeading from '../SectionHeading'
 import ProductCard from '../ProductCard'
 import { urlFor } from '@/sanity/lib/image'

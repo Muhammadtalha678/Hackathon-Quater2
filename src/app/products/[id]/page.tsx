@@ -32,7 +32,7 @@ export default async function ProductDetail({params}: {params: Promise<{ id: str
         {/* Main Section */}
 
         {/* //product detail data */}
-        <ProductDetailData prodDetail={responseProduct}/>
+        <ProductDetailData prodDetail={data}/>
     
         {/* Featured Products Section */}
         <div className="w-full max-w-6xl mt-12">
