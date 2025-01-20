@@ -8,7 +8,7 @@ import { useCart } from '@/context/CartContext'
 
 
 const CategoryLists = ({cateProd,slug}:{cateProd:Product[],slug:string}) => {
-    const {cart,addToCart} = useCart()
+    const {addToCart} = useCart()
     return (
      <section className="mt-10 px-8">
 
