@@ -1,9 +1,4 @@
 import React from 'react';
-import { FaRegTrashAlt } from 'react-icons/fa';
-import { CiHeart } from 'react-icons/ci';
-import Prod3 from '../../../public/product3.png';
-import Prod8 from '../../../public/product8.png';
-import Image from 'next/image';
 import { Metadata } from 'next';
 import CartList from '@/components/Cart/CartList';
 
@@ -14,27 +9,7 @@ export const metadata: Metadata = {
 };
 
 const ShoppingCart = () => {
-  const items = [
-    {
-      id: 1,
-      name: 'Library Stool Chair',
-      price: 99,
-      size: 'L',
-      quantity: 1,
-      image: Prod3 // Replace with actual image path
-    },
-    {
-      id: 2,
-      name: 'Library Stool Chair',
-      price: 99,
-      size: 'L',
-      quantity: 1,
-      image: Prod8, // Replace with actual image path
-    },
-  ];
-
-  const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
+  
   return (
     <div className=" ">
       <div className="max-w-7xl mx-auto p-6">
