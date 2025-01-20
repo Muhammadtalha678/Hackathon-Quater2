@@ -8,6 +8,7 @@ import ProductSkeleton from '../Skeleton/ProductSkeleton'
 
 const FeatuedProducts = ({featProd}:{featProd:Product[]}) => {
  
+ 
   return (
     <section className="mt-32 px-8">
         <SectionHeading heading="Featured Products" />

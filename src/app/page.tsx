@@ -7,14 +7,23 @@ import Products from "@/components/Home/Products";
 import { HomePage } from "@/interfaces/HomePage";
 
 export default async function Home() {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/home`, { cache: 'no-store' })
+  // const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/home`, { cache: 'no-store' })
+  const response = await fetch(`http://localhost:3000/api/home`, { cache: 'no-store' })
     if (!response.ok) {
-      throw new Error("Failed to fetch data");
+      throw new Error("Invalid Request");
     }
-    const { data } = await response.json()
     
-    const { featuredProducts, categories, products, galleryProducts }: HomePage = data
+  const data: {
+    error: boolean,
+    data:HomePage,
+    message: string
+  } = await response.json()
+  
+    
+  if (data.error) {
+    throw new Error(data.message);
+  }
+    const { featuredProducts,categories,products,galleryProducts } = data.data
     
        return (
     <div className=" md:px-12 lg:px-16 xl:px-32 ">
@@ -37,8 +46,5 @@ export default async function Home() {
       <Products products={products}/>
     </div>
   );
-  } catch (error) {
-    throw error
-  }
  
 }

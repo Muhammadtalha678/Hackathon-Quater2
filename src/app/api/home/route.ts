@@ -10,10 +10,14 @@ export async function GET() {
             client.fetch(ALL_PRODUCT_QUERY),
             client.fetch(GALLERY_PRODUCTS)
         ])
+        if (!featuredProducts || !categories || !products || !galleryProducts) {
+            throw new Error("Error Fetching Products");
+
+        }
         return NextResponse.json({
-            error: true, data: {
+            error: false, data: {
                 featuredProducts, categories, products, galleryProducts
-            }, message: "Categories, Featured fetched successfully"
+            }, message: "Categories, Products fetched successfully"
         })
     } catch (error) {
         const err = error as Error

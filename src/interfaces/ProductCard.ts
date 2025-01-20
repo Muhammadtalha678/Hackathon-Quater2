@@ -6,5 +6,6 @@ export interface ProdcutCardInterface {
     id?: string,
     title?: string,
     price?: number,
-    pricewithoutDiscount?: number
+    pricewithoutDiscount?: number,
+    href?: string
 }

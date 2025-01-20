@@ -18,7 +18,7 @@ const CategoryProducts = ({categories,products}:{categories:Category[],products:
                 const catProducts = products.filter((e) => e.category._ref === category._id) 
               const imageUrl = urlFor(category.image.asset._ref).url()
                 return <ProductCard InfoSection={false} imagePath={imageUrl} key={i}
-                  productCounts={catProducts.length!} title={category.title}
+                  productCounts={catProducts.length!} title={category.title} href={`${category.title}/${category._id}`}
               />
             })
             :

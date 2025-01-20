@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 
 const ProductCard = (
-  {productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount}:ProdcutCardInterface) => {
+  {productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount,href}:ProdcutCardInterface) => {
   return (
     <div className="flex items-center justify-center w-full">
       <div className="relative flex flex-col w-full h-auto rounded-lg overflow-hidden bg-white">
@@ -18,7 +18,7 @@ const ProductCard = (
 
         {/* Image Section */}
         <div className="relative w-full h-[350px] cursor-pointer" >
-          <Link href={`/products/${id}`}>
+          <Link href={href?href :`/products/${id}`}>
             <Image
               src={imagePath}
               alt="Featured Product"
@@ -34,7 +34,7 @@ const ProductCard = (
                   {title}
                 </ThemeText>
                 <ThemeText fontWeight="font-normal" className="text-[14px] leading-[19px] text-white">
-                  {productCounts}
+                  {productCounts} Products
                 </ThemeText>
               </div>
             </div>
