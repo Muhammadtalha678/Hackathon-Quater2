@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import NavbarLogo from '../../public/NavbarLogo.png'
 import Cart from '../../public/cart.png'
@@ -7,7 +8,9 @@ import ThemeText from './ThemeText'
 import { dm_sans } from '@/utils/fonts'
 import TopHeader from './TopHeader'
 import NavLinkHeader from './NavLinkHeader'
+import {useCart} from '@/context/CartContext'
 const Header = () => {
+  const {cart} = useCart()
   return (
     <div>
       {/* header 1 */}
@@ -24,7 +27,7 @@ const Header = () => {
                 <Image src={Cart} alt='cart' width={22} height={22}/>
                 <ThemeText  fontWeight='font-medium' className='text-[12px] leading-3'>Cart</ThemeText>
                 <div className={`flex items-center justify-center w-5 h-5 bg-[#007580] rounded-2xl `}>
-                <p className={`${dm_sans.className} text-[10px] text-[#fff] leading-[10px]`}>2</p>
+                <p className={`${dm_sans.className} text-[10px] text-[#fff] leading-[10px]`}>{cart.length}</p>
                 </div>
             </div>
           </Link>

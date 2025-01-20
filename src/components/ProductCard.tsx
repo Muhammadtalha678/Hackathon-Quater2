@@ -1,4 +1,4 @@
-
+'use client'
 import Image from 'next/image';
 import React from 'react';
 import ThemeText from './ThemeText';
@@ -6,11 +6,13 @@ import Button from './Button';
 import { FiShoppingCart } from 'react-icons/fi';
 import { ProdcutCardInterface } from '@/interfaces/ProductCard';
 import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 
 
 
 const ProductCard = (
-  {productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount,href}:ProdcutCardInterface) => {
+  {productCounts,InfoSection,badge,imagePath,id,title,price,pricewithoutDiscount,href,addToCart}:ProdcutCardInterface) => {
+  const {cart} = useCart()
   return (
     <div className="flex items-center justify-center w-full">
       <div className="relative flex flex-col w-full h-auto rounded-lg overflow-hidden bg-white">
@@ -84,11 +86,18 @@ const ProductCard = (
                 </div>
               </div>
               <div className="flex">
-                <Button width="w-[44px]" height="h-[44px]" borderRad="rounded-lg" bg="bg-[#029FAE]">
+                { cart.find((e) => e._id === id) ?
+                  <div className='w-[44px] h-[44px] rounded-lg bg-[#029FAE] text-center flex items-center justify-center'>
                   <div className="flex items-center justify-center">
                     <FiShoppingCart />
                   </div>
-                </Button>
+                  </div> :
+                  <Button width="w-[44px]" height="h-[44px]" borderRad="rounded-lg" bg="bg-[#5CCFD9]" clickButton={addToCart}>
+                  <div className="flex items-center justify-center">
+                    <FiShoppingCart />
+                  </div>
+                  </Button>
+                }
               </div>
             </div>
           </div>

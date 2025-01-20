@@ -1,4 +1,3 @@
-
 import { Metadata } from 'next';
 import Image from "next/image";
 import { Product } from '@/interfaces/Product';
@@ -6,7 +5,7 @@ import { urlFor } from '@/sanity/lib/image';
 import { client } from '@/sanity/lib/client';
 import Link from 'next/link';
 import { FEATURED_PRODUCTS_QUERY } from '@/lib/quries';
-
+import ProductDetailData from '@/components/Products/ProductDetailData'
 
 
 export const metadata: Metadata = {
@@ -28,42 +27,13 @@ export default async function ProductDetail({params}: {params: Promise<{ id: str
     const data: Product = await responseProduct
     const featured: Product[] = await responseFeaturedProd 
 
-    
-    const imageUrl = urlFor(data?.image?.asset?._ref).url()
     return (
        <div className="flex flex-col items-center p-6 min-h-screen">
         {/* Main Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
-          {/* Main Chair Image */}
-          <div className="flex justify-center">
-            <Image
-              src={imageUrl}
-              alt="Library Stool Chair"
-              width={500}
-              height={500}
-              className="rounded-lg "
-            />
-          </div>
-  
-          {/* Chair Details */}
-          <div className="flex flex-col justify-center space-y-10">
-            <h1 className="text-2xl lg:text-4xl font-bold text-gray-800">
-              {data.title}
-            </h1>
-            <div>
-              <span className="bg-teal-600 text-white text-sm lg:text-base font-semibold px-4 py-2 rounded-full">
-                ${ data.price?data.price : data.priceWithoutDiscount}
-              </span>
-            </div>
-            <p className="text-sm lg:text-base text-gray-600">
-              {data.description}
-            </p>
-            <button className="px-4 py-2 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 text-sm lg:text-base lg:w-40">
-              Add To Cart
-            </button>
-          </div>
-        </div>
-  
+
+        {/* //product detail data */}
+        <ProductDetailData prodDetail={responseProduct}/>
+    
         {/* Featured Products Section */}
         <div className="w-full max-w-6xl mt-12">
           <div className="flex justify-between items-center">

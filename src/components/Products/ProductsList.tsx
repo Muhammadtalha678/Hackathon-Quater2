@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { Product } from '@/interfaces/Product'
 import SectionHeading from '../SectionHeading'
@@ -5,10 +6,12 @@ import ProductCard from '../ProductCard'
 import { roboto } from '@/utils/fonts'
 import ProdcutsInstagram from './ProdcutsInstagram'
 import { urlFor } from '@/sanity/lib/image'
+import { useCart } from '@/context/CartContext'
+
 // jest+chae.js+mocka.js
 const ProductsList = ({ products }: { products: Product[] }) => {
   const filterInstagram = products.filter((prod) => prod.tags.includes('instagram'))
-  
+  const {addToCart} = useCart()
   return (
 
     <section className="mt-10 px-8">
@@ -20,7 +23,7 @@ const ProductsList = ({ products }: { products: Product[] }) => {
             const imageUrl = urlFor(prod.image.asset._ref).url()
             return <ProductCard key={i} imagePath={imageUrl} badge={prod.badge!}
               InfoSection={true} title={prod.title} pricewithoutDiscount={prod.priceWithoutDiscount!}
-              price={prod.price!} id={prod._id} />
+              price={prod.price!} id={prod._id} addToCart={() => addToCart(prod)}/>
           })
           }
         </div>

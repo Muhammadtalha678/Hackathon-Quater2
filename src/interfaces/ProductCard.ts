@@ -7,5 +7,6 @@ export interface ProdcutCardInterface {
     title?: string,
     price?: number,
     pricewithoutDiscount?: number,
-    href?: string
+    href?: string,
+    addToCart?: () => void
 }

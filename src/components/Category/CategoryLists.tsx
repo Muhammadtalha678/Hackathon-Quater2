@@ -1,11 +1,15 @@
+'use client'
 import { Product } from '@/interfaces/Product'
-import React from 'react'
+import React, { useContext } from 'react'
 import SectionHeading from '../SectionHeading'
 import ProductCard from '../ProductCard'
 import { urlFor } from '@/sanity/lib/image'
+import { useCart } from '@/context/CartContext'
+
 
 const CategoryLists = ({cateProd,slug}:{cateProd:Product[],slug:string}) => {
-  return (
+    const {cart,addToCart} = useCart()
+    return (
      <section className="mt-10 px-8">
 
       <div>
@@ -16,7 +20,8 @@ const CategoryLists = ({cateProd,slug}:{cateProd:Product[],slug:string}) => {
             cateProd.map((prod,ind) => {
                 const imageUrl = urlFor(prod.image.asset._ref).url()
                 return <ProductCard imagePath={imageUrl} key={ind} id={prod._id} InfoSection={true}
-                title={prod.title} price={prod.price} pricewithoutDiscount={prod.priceWithoutDiscount!} />
+                title={prod.title} price={prod.price} pricewithoutDiscount={prod.priceWithoutDiscount!}
+                badge={prod.badge} addToCart={() => addToCart(prod)} />
             })
           }
         </div>
