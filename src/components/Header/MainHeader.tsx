@@ -15,7 +15,7 @@ const MainHeader = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             console.log(searchQuery);
-            
+            setSearchQuery(searchQuery)
         }, 500);  
         return () => clearTimeout(timer)
     }, [searchQuery])
