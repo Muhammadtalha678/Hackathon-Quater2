@@ -5,6 +5,7 @@ import SectionHeading from '../SectionHeading'
 import ProductCard from '../ProductCard'
 import { urlFor } from '@/sanity/lib/image'
 import { useCart } from '@/context/CartContext'
+import BreadCrumb from '../ui/BreadCrumb/BreadCrumb'
 
 
 const CategoryLists = ({cateProd,slug}:{cateProd:Product[],slug:string}) => {
@@ -14,6 +15,7 @@ const CategoryLists = ({cateProd,slug}:{cateProd:Product[],slug:string}) => {
 
       <div>
         {/* <SectionHeading heading={slug.split('-').join(' ').toUpperCase()} /> */}
+        <BreadCrumb link={['Home',`${slug}`]}/>
         <SectionHeading heading={slug} />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {

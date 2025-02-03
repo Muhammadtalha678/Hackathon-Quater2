@@ -7,7 +7,7 @@ import Products from "@/components/Home/Products";
 import { HomePage } from "@/interfaces/HomePage";
 
 export default async function Home() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/home`, { cache: 'no-store' })
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL!}/api/home`, { cache: 'no-store' })
     if (!response.ok) {
       throw new Error("Invalid Request");
     }
