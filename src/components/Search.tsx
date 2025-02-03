@@ -11,7 +11,6 @@ const SearchCompo = () => {
 useEffect(() => {
     const timer = setTimeout(() => {
         if (searchQuery) {
-            console.log(searchQuery);
             
             router.push(`/search?q=${searchQuery.trim()}`);   
             }
@@ -31,12 +30,7 @@ useEffect(() => {
           placeholder="Search for products..."
           className="flex-1 h-12 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#007580] bg-white text-sm"
         />
-        <button
-          type="submit"
-          className="h-12 px-6 ml-2 rounded-lg bg-[#007580] text-white text-sm hover:bg-[#005f66]"
-        >
-          Search
-        </button>
+       
         </form>
     //   <Form action={'/search'}
     //     // onSubmit={handleSearchSubmit}

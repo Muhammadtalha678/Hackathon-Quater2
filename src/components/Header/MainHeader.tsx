@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import NavbarLogo from '../../../public/NavbarLogo.png';
@@ -10,15 +10,7 @@ import { useCart } from '@/context/CartContext';
 import SearchCompo from '../Search';
 
 const MainHeader = () => {
-    const [searchQuery,setSearchQuery] = useState('')
     const { cart } = useCart();
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            console.log(searchQuery);
-            setSearchQuery(searchQuery)
-        }, 500);  
-        return () => clearTimeout(timer)
-    }, [searchQuery])
     
     return (
       <div className="flex items-center justify-between px-4 py-3 md:px-8 lg:px-12 xl:px-36 bg-[#F0F2F3]">
