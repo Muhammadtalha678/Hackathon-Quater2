@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useRouter} from 'next/navigation'
-import Form from 'next/form'
+// import Form from 'next/form'
 const SearchCompo = () => {
     const router = useRouter()
     const [searchQuery,setSearchQuery] = useState<string>('')
